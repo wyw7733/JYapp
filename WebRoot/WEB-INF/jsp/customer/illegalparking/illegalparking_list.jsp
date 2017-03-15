@@ -67,33 +67,45 @@
 									<label class="pos-rel"><input type="checkbox" class="ace" id="zcheckbox" /><span class="lbl"></span></label>
 									</th>
 									<th class="center" style="width:50px;">序号</th>
-									<th class="center">采集机关</th>
-									<th class="center">号牌号码</th>
-									<th class="center">机动车所有人</th>
-									<th class="center">使用性质</th>
-									<th class="center">发动机号</th>
-									<th class="center">车身颜色</th>
-									<th class="center">车辆品牌</th>
-									<th class="center">发证机关</th>
-									<th class="center">电话</th>
-									<th class="center">联系方式</th>
-									<th class="center">住所详细地址</th>
-									<th class="center">通知书号</th>
-									<th class="center">通知日期</th>
-									<th class="center">违法时间</th>
-									<th class="center">违法地点</th>
-									<th class="center">路段号码</th>
-									<th class="center">地点米数</th>
-									<th class="center">违法时间1</th>
-									<th class="center">违法地点1</th>
-									<th class="center">路段号码1</th>
-									<th class="center">地点米数1</th>
-									<th class="center">违法地址</th>
-									<th class="center">违法行为</th>
-									<th class="center">实测值</th>
-									<th class="center">标准值</th>
-									<th class="center">执勤民警</th>
-									<th class="center">照片</th>
+									<th class="center">备注1</th>
+									<th class="center">备注2</th>
+									<th class="center">备注3</th>
+									<th class="center">备注4</th>
+									<th class="center">备注5</th>
+									<th class="center">备注6</th>
+									<th class="center">备注7</th>
+									<th class="center">备注8</th>
+									<th class="center">备注9</th>
+									<th class="center">备注10</th>
+									<th class="center">备注11</th>
+									<th class="center">备注12</th>
+									<th class="center">备注13</th>
+									<th class="center">备注14</th>
+									<th class="center">备注15</th>
+									<th class="center">备注16</th>
+									<th class="center">备注17</th>
+									<th class="center">备注18</th>
+									<th class="center">备注19</th>
+									<th class="center">备注20</th>
+									<th class="center">备注21</th>
+									<th class="center">备注22</th>
+									<th class="center">备注23</th>
+									<th class="center">备注24</th>
+									<th class="center">备注25</th>
+									<th class="center">备注26</th>
+									<th class="center">备注27</th>
+									<th class="center">备注28</th>
+									<th class="center">备注29</th>
+									<th class="center">备注30</th>
+									<th class="center">备注31</th>
+									<th class="center">备注32</th>
+									<th class="center">备注33</th>
+									<th class="center">备注34</th>
+									<th class="center">备注35</th>
+									<th class="center">备注36</th>
+									<th class="center">备注37</th>
+									<th class="center">备注38</th>
+									<th class="center">备注39</th>
 									<th class="center">操作</th>
 								</tr>
 							</thead>
@@ -106,23 +118,30 @@
 									<c:forEach items="${varList}" var="var" varStatus="vs">
 										<tr>
 											<td class='center'>
-												<label class="pos-rel"><input type='checkbox' name='ids' value="${var.WFBH}" class="ace" /><span class="lbl"></span></label>
+												<label class="pos-rel"><input type='checkbox' name='ids' value="${var.ILLEGALPARKING_ID}" class="ace" /><span class="lbl"></span></label>
 											</td>
 											<td class='center' style="width: 30px;">${vs.index+1}</td>
-											<td class='center'>${var.CCJG}</td>
+											<td class='center'>${var.XH}</td>
+											<td class='center'>${var.CJJG}</td>
+											<td class='center'>${var.CLFL}</td>
+											<td class='center'>${var.HPZL}</td>
 											<td class='center'>${var.HPHM}</td>
 											<td class='center'>${var.JDCSYR}</td>
 											<td class='center'>${var.SYXZ}</td>
 											<td class='center'>${var.FDJH}</td>
+											<td class='center'>${var.CLSBDH}</td>
 											<td class='center'>${var.CSYS}</td>
-											<td class='center'>${var.CLPP}</td>
+											<td class='center'>${var.JTFS}</td>
 											<td class='center'>${var.FZJG}</td>
+											<td class='center'>${var.ZSXZQH}</td>
+											<td class='center'>${var.ZSXXDZ}</td>
 											<td class='center'>${var.DH}</td>
 											<td class='center'>${var.LXFS}</td>
-											<td class='center'>${var.ZSXXDZ}</td>
 											<td class='center'>${var.TZSH}</td>
 											<td class='center'>${var.TZRQ}</td>
+											<td class='center'>${var.CJFS}</td>
 											<td class='center'>${var.WFSJ}</td>
+											<td class='center'>${var.XZQH}</td>
 											<td class='center'>${var.WFDD}</td>
 											<td class='center'>${var.LDDM}</td>
 											<td class='center'>${var.DDMS}</td>
@@ -135,8 +154,12 @@
 											<td class='center'>${var.SCZ}</td>
 											<td class='center'>${var.BZZ}</td>
 											<td class='center'>${var.ZQMJ}</td>
+											<td class='center'>${var.SPDZ}</td>
+											<td class='center'>${var.SBBH}</td>
 											<td class='center'>${var.ZPSTR1}</td>
-											
+											<td class='center'>${var.ZPSTR2}</td>
+											<td class='center'>${var.ZPSTR3}</td>
+											<td class='center'>${var.SHZT}</td>
 											<td class="center">
 												<c:if test="${QX.edit != 1 && QX.del != 1 }">
 												<span class="label label-large label-grey arrowed-in-right arrowed-in"><i class="ace-icon fa fa-lock" title="无权限"></i></span>
@@ -347,7 +370,7 @@
 			 var diag = new top.Dialog();
 			 diag.Drag=true;
 			 diag.Title ="编辑";
-			 diag.URL = '<%=basePath%>illegalparking/goEdit.do?WFBH='+Id;
+			 diag.URL = '<%=basePath%>illegalparking/goEdit.do?ILLEGALPARKING_ID='+Id;
 			 diag.Width = 450;
 			 diag.Height = 355;
 			 diag.Modal = true;				//有无遮罩窗口
