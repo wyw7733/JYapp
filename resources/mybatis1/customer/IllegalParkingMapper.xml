@@ -4,7 +4,7 @@
 	
 	<!--表名 -->
 	<sql id="tableName">
-		"ILLEGALPARKING"
+		"VIO_VIOLATION"
 	</sql>
 	
 	<!-- 字段 -->
@@ -124,8 +124,7 @@
 		"ZPSTR1",	
 		"ZPSTR2",	
 		"ZPSTR3",	
-		"SHZT",	
-		"ILLEGALPARKING_ID"
+		"SHZT"
 	</sql>
 	
 	<!-- 字段值 -->
@@ -245,8 +244,7 @@
 			#{ZPSTR1},	
 			#{ZPSTR2},	
 			#{ZPSTR3},	
-			#{SHZT},	
-			#{ILLEGALPARKING_ID}
+			#{SHZT}
 	</sql>
 	
 	<!-- 新增-->
@@ -265,7 +263,7 @@
 		delete from
 		<include refid="tableName"></include>
 		where 
-			"ILLEGALPARKING_ID" = #{ILLEGALPARKING_ID}
+			"WFBH" = #{WFBH}
 	</delete>
 	
 	<!-- 修改 -->
@@ -273,7 +271,6 @@
 		update
 		<include refid="tableName"></include>
 			set 
-				"WFBH" = #{WFBH},	
 				"JDSLB" = #{JDSLB},	
 				"JDSBH" = #{JDSBH},	
 				"WSJYW" = #{WSJYW},	
@@ -388,10 +385,9 @@
 				"ZPSTR1" = #{ZPSTR1},	
 				"ZPSTR2" = #{ZPSTR2},	
 				"ZPSTR3" = #{ZPSTR3},	
-				"SHZT" = #{SHZT},	
-			"ILLEGALPARKING_ID" = "ILLEGALPARKING_ID"
+				"SHZT" = #{SHZT}
 			where 
-				"ILLEGALPARKING_ID" = #{ILLEGALPARKING_ID}
+				"WFBH" = #{WFBH}
 	</update>
 	
 	<!-- 通过ID获取数据 -->
@@ -401,7 +397,7 @@
 		from 
 		<include refid="tableName"></include>
 		where 
-			"ILLEGALPARKING_ID" = #{ILLEGALPARKING_ID}
+			"WFBH" = #{WFBH}
 	</select>
 	
 	<!-- 列表 -->
@@ -436,7 +432,7 @@
 		delete from
 		<include refid="tableName"></include>
 		where 
-			"ILLEGALPARKING_ID" in
+			"WFBH" in
 		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
                  #{item}
 		</foreach>
