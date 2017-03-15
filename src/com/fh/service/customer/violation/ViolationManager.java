@@ -5,7 +5,7 @@ import com.fh.entity.Page;
 import com.fh.util.PageData;
 
 /** 
- * 说明： 随手拍查询与写入接口
+ * 说明： 违法信息业务接口
  * 创建人：FH Q
  * 创建时间：2017-03-15
  * @version
