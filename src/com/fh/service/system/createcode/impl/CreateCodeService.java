@@ -28,7 +28,7 @@ public class CreateCodeService implements CreateCodeManager{
 	 * @throws Exception
 	 */
 	public void save(PageData pd)throws Exception{
-		dao.save("CreateCodeMapper.save", pd);
+		//dao.save("CreateCodeMapper.save", pd);
 	}
 	
 	/**删除
