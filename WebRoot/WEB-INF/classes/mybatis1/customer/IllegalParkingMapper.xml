@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="IllegalParkingMapper">
+	
+	<!--表名 -->
+	<sql id="tableName">
+		"VIO_VIOLATION"
+	</sql>
+	
+	<!-- 字段 -->
+	<sql id="Field">
+		"WFBH",	
+		"JDSLB",	
+		"JDSBH",	
+		"WSJYW",	
+		"RYFL",	
+		"JSZH",	
+		"DABH",	
+		"FZJG",	
+		"ZJCX",	
+		"DSR",	
+		"ZSXZQH",	
+		"ZSXXDZ",	
+		"DH",	
+		"LXFS",	
+		"CLFL",	
+		"HPZL",	
+		"HPHM",	
+		"JDCSYR",	
+		"SYXZ",	
+		"JTFS",	
+		"WFSJ",	
+		"XZQH",	
+		"DLLX",	
+		"GLXZDJ",	
+		"WFDD",	
+		"LDDM",	
+		"DDMS",	
+		"DDJDWZ",	
+		"WFDZ",	
+		"WFXW",	
+		"WFJFS",	
+		"FKJE",	
+		"SCZ",	
+		"BZZ",	
+		"ZNJ",	
+		"ZQMJ",	
+		"JKFS",	
+		"FXJG",	
+		"FXJGMC",	
+		"CLJG",	
+		"CLJGMC",	
+		"CFZL",	
+		"CLSJ",	
+		"JKBJ",	
+		"JKRQ",	
+		"PZBH",	
+		"JSJQBJ",	
+		"JLLX",	
+		"LRR",	
+		"LRSJ",	
+		"JBR1",	
+		"JBR2",	
+		"SGDJ",	
+		"CLDXBJ",	
+		"JDCCLDXBJ",	
+		"ZDJLBJ",	
+		"XXLY",	
+		"XRMS",	
+		"DKBJ",	
+		"JMZNJBJ",	
+		"ZDBJ",	
+		"JSJG",	
+		"FSJG",	
+		"GXSJ",	
+		"BZ",	
+		"YWJYW",	
+		"ZJMC",	
+		"CCLZRQ",	
+		"NL",	
+		"XB",	
+		"HCBJ",	
+		"JD",	
+		"WD",	
+		"YLZZ1",	
+		"YLZZ2",	
+		"YLZZ3",	
+		"YLZZ4",	
+		"YLZZ5",	
+		"YLZZ6",	
+		"YLZZ7",	
+		"YLZZ8",	
+		"CJFS",	
+		"WFSJ1",	
+		"WFDD1",	
+		"LDDM1",	
+		"DDMS1",	
+		"JSRXZ",	
+		"CLYT",	
+		"XCFW",	
+		"DZZB",	
+		"SFZDRY",	
+		"XYSFZMHM",	
+		"XYXM",	
+		"YLZZ11",	
+		"YLZZ12",	
+		"YLZZ13",	
+		"YLZZ14",	
+		"YLZZ15",	
+		"YLZZ16",	
+		"YLZZ17",	
+		"YLZZ18",	
+		"XH",	
+		"CJJG",	
+		"FDJH",	
+		"CLSBDH",	
+		"CSYS",	
+		"CLPP",	
+		"ZZXZQH",	
+		"TZSH",	
+		"TZRQ",	
+		"SPDZ",	
+		"SBBH",	
+		"ZPSTR1",	
+		"ZPSTR2",	
+		"ZPSTR3",	
+		"SHZT"
+	</sql>
+	
+	<!-- 字段值 -->
+	<sql id="FieldValue">
+			#{WFBH},	
+			#{JDSLB},	
+			#{JDSBH},	
+			#{WSJYW},	
+			#{RYFL},	
+			#{JSZH},	
+			#{DABH},	
+			#{FZJG},	
+			#{ZJCX},	
+			#{DSR},	
+			#{ZSXZQH},	
+			#{ZSXXDZ},	
+			#{DH},	
+			#{LXFS},	
+			#{CLFL},	
+			#{HPZL},	
+			#{HPHM},	
+			#{JDCSYR},	
+			#{SYXZ},	
+			#{JTFS},	
+			#{WFSJ},	
+			#{XZQH},	
+			#{DLLX},	
+			#{GLXZDJ},	
+			#{WFDD},	
+			#{LDDM},	
+			#{DDMS},	
+			#{DDJDWZ},	
+			#{WFDZ},	
+			#{WFXW},	
+			#{WFJFS},	
+			#{FKJE},	
+			#{SCZ},	
+			#{BZZ},	
+			#{ZNJ},	
+			#{ZQMJ},	
+			#{JKFS},	
+			#{FXJG},	
+			#{FXJGMC},	
+			#{CLJG},	
+			#{CLJGMC},	
+			#{CFZL},	
+			#{CLSJ},	
+			#{JKBJ},	
+			#{JKRQ},	
+			#{PZBH},	
+			#{JSJQBJ},	
+			#{JLLX},	
+			#{LRR},	
+			#{LRSJ},	
+			#{JBR1},	
+			#{JBR2},	
+			#{SGDJ},	
+			#{CLDXBJ},	
+			#{JDCCLDXBJ},	
+			#{ZDJLBJ},	
+			#{XXLY},	
+			#{XRMS},	
+			#{DKBJ},	
+			#{JMZNJBJ},	
+			#{ZDBJ},	
+			#{JSJG},	
+			#{FSJG},	
+			#{GXSJ},	
+			#{BZ},	
+			#{YWJYW},	
+			#{ZJMC},	
+			#{CCLZRQ},	
+			#{NL},	
+			#{XB},	
+			#{HCBJ},	
+			#{JD},	
+			#{WD},	
+			#{YLZZ1},	
+			#{YLZZ2},	
+			#{YLZZ3},	
+			#{YLZZ4},	
+			#{YLZZ5},	
+			#{YLZZ6},	
+			#{YLZZ7},	
+			#{YLZZ8},	
+			#{CJFS},	
+			#{WFSJ1},	
+			#{WFDD1},	
+			#{LDDM1},	
+			#{DDMS1},	
+			#{JSRXZ},	
+			#{CLYT},	
+			#{XCFW},	
+			#{DZZB},	
+			#{SFZDRY},	
+			#{XYSFZMHM},	
+			#{XYXM},	
+			#{YLZZ11},	
+			#{YLZZ12},	
+			#{YLZZ13},	
+			#{YLZZ14},	
+			#{YLZZ15},	
+			#{YLZZ16},	
+			#{YLZZ17},	
+			#{YLZZ18},	
+			#{XH},	
+			#{CJJG},	
+			#{FDJH},	
+			#{CLSBDH},	
+			#{CSYS},	
+			#{CLPP},	
+			#{ZZXZQH},	
+			#{TZSH},	
+			#{TZRQ},	
+			#{SPDZ},	
+			#{SBBH},	
+			#{ZPSTR1},	
+			#{ZPSTR2},	
+			#{ZPSTR3},	
+			#{SHZT}
+	</sql>
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd">
+		insert into
+		<include refid="tableName"></include>
+		(
+		<include refid="Field"></include>
+		) values (
+		<include refid="FieldValue"></include>
+		)
+	</insert>
+	
+	<!-- 删除-->
+	<delete id="delete" parameterType="pd">
+		delete from
+		<include refid="tableName"></include>
+		where 
+			"WFBH" = #{WFBH}
+	</delete>
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update
+		<include refid="tableName"></include>
+			set 
+				"JDSLB" = #{JDSLB},	
+				"JDSBH" = #{JDSBH},	
+				"WSJYW" = #{WSJYW},	
+				"RYFL" = #{RYFL},	
+				"JSZH" = #{JSZH},	
+				"DABH" = #{DABH},	
+				"FZJG" = #{FZJG},	
+				"ZJCX" = #{ZJCX},	
+				"DSR" = #{DSR},	
+				"ZSXZQH" = #{ZSXZQH},	
+				"ZSXXDZ" = #{ZSXXDZ},	
+				"DH" = #{DH},	
+				"LXFS" = #{LXFS},	
+				"CLFL" = #{CLFL},	
+				"HPZL" = #{HPZL},	
+				"HPHM" = #{HPHM},	
+				"JDCSYR" = #{JDCSYR},	
+				"SYXZ" = #{SYXZ},	
+				"JTFS" = #{JTFS},	
+				"WFSJ" = #{WFSJ},	
+				"XZQH" = #{XZQH},	
+				"DLLX" = #{DLLX},	
+				"GLXZDJ" = #{GLXZDJ},	
+				"WFDD" = #{WFDD},	
+				"LDDM" = #{LDDM},	
+				"DDMS" = #{DDMS},	
+				"DDJDWZ" = #{DDJDWZ},	
+				"WFDZ" = #{WFDZ},	
+				"WFXW" = #{WFXW},	
+				"WFJFS" = #{WFJFS},	
+				"FKJE" = #{FKJE},	
+				"SCZ" = #{SCZ},	
+				"BZZ" = #{BZZ},	
+				"ZNJ" = #{ZNJ},	
+				"ZQMJ" = #{ZQMJ},	
+				"JKFS" = #{JKFS},	
+				"FXJG" = #{FXJG},	
+				"FXJGMC" = #{FXJGMC},	
+				"CLJG" = #{CLJG},	
+				"CLJGMC" = #{CLJGMC},	
+				"CFZL" = #{CFZL},	
+				"CLSJ" = #{CLSJ},	
+				"JKBJ" = #{JKBJ},	
+				"JKRQ" = #{JKRQ},	
+				"PZBH" = #{PZBH},	
+				"JSJQBJ" = #{JSJQBJ},	
+				"JLLX" = #{JLLX},	
+				"LRR" = #{LRR},	
+				"LRSJ" = #{LRSJ},	
+				"JBR1" = #{JBR1},	
+				"JBR2" = #{JBR2},	
+				"SGDJ" = #{SGDJ},	
+				"CLDXBJ" = #{CLDXBJ},	
+				"JDCCLDXBJ" = #{JDCCLDXBJ},	
+				"ZDJLBJ" = #{ZDJLBJ},	
+				"XXLY" = #{XXLY},	
+				"XRMS" = #{XRMS},	
+				"DKBJ" = #{DKBJ},	
+				"JMZNJBJ" = #{JMZNJBJ},	
+				"ZDBJ" = #{ZDBJ},	
+				"JSJG" = #{JSJG},	
+				"FSJG" = #{FSJG},	
+				"GXSJ" = #{GXSJ},	
+				"BZ" = #{BZ},	
+				"YWJYW" = #{YWJYW},	
+				"ZJMC" = #{ZJMC},	
+				"CCLZRQ" = #{CCLZRQ},	
+				"NL" = #{NL},	
+				"XB" = #{XB},	
+				"HCBJ" = #{HCBJ},	
+				"JD" = #{JD},	
+				"WD" = #{WD},	
+				"YLZZ1" = #{YLZZ1},	
+				"YLZZ2" = #{YLZZ2},	
+				"YLZZ3" = #{YLZZ3},	
+				"YLZZ4" = #{YLZZ4},	
+				"YLZZ5" = #{YLZZ5},	
+				"YLZZ6" = #{YLZZ6},	
+				"YLZZ7" = #{YLZZ7},	
+				"YLZZ8" = #{YLZZ8},	
+				"CJFS" = #{CJFS},	
+				"WFSJ1" = #{WFSJ1},	
+				"WFDD1" = #{WFDD1},	
+				"LDDM1" = #{LDDM1},	
+				"DDMS1" = #{DDMS1},	
+				"JSRXZ" = #{JSRXZ},	
+				"CLYT" = #{CLYT},	
+				"XCFW" = #{XCFW},	
+				"DZZB" = #{DZZB},	
+				"SFZDRY" = #{SFZDRY},	
+				"XYSFZMHM" = #{XYSFZMHM},	
+				"XYXM" = #{XYXM},	
+				"YLZZ11" = #{YLZZ11},	
+				"YLZZ12" = #{YLZZ12},	
+				"YLZZ13" = #{YLZZ13},	
+				"YLZZ14" = #{YLZZ14},	
+				"YLZZ15" = #{YLZZ15},	
+				"YLZZ16" = #{YLZZ16},	
+				"YLZZ17" = #{YLZZ17},	
+				"YLZZ18" = #{YLZZ18},	
+				"XH" = #{XH},	
+				"CJJG" = #{CJJG},	
+				"FDJH" = #{FDJH},	
+				"CLSBDH" = #{CLSBDH},	
+				"CSYS" = #{CSYS},	
+				"CLPP" = #{CLPP},	
+				"ZZXZQH" = #{ZZXZQH},	
+				"TZSH" = #{TZSH},	
+				"TZRQ" = #{TZRQ},	
+				"SPDZ" = #{SPDZ},	
+				"SBBH" = #{SBBH},	
+				"ZPSTR1" = #{ZPSTR1},	
+				"ZPSTR2" = #{ZPSTR2},	
+				"ZPSTR3" = #{ZPSTR3},	
+				"SHZT" = #{SHZT}
+			where 
+				"WFBH" = #{WFBH}
+	</update>
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+		<include refid="Field"></include>
+		from 
+		<include refid="tableName"></include>
+		where 
+			"WFBH" = #{WFBH}
+	</select>
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+		<include refid="Field"></include>
+		from 
+		<include refid="tableName"></include>
+		where 1=1
+		<if test="pd.keywords!= null and pd.keywords != ''"><!-- 关键词检索 -->
+			and
+				(
+				<!--	根据需求自己加检索条件
+					字段1 LIKE CONCAT(CONCAT('%', #{pd.keywords}),'%')
+					 or 
+					字段2 LIKE CONCAT(CONCAT('%', #{pd.keywords}),'%') 
+				-->
+				)
+		</if>
+	</select>
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+		<include refid="Field"></include>
+		from 
+		<include refid="tableName"></include>
+	</select>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteAll" parameterType="String">
+		delete from
+		<include refid="tableName"></include>
+		where 
+			"WFBH" in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</delete>
+	
+	<!-- fh -->
+</mapper>
