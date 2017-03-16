@@ -151,6 +151,14 @@
 					"WFDZ" LIKE CONCAT(CONCAT('%', #{pd.keywords}),'%') 
 					or
 					"ZQMJ" LIKE CONCAT(CONCAT('%', #{pd.keywords}),'%') 
+					or
+					"WFDD" LIKE CONCAT(CONCAT('%', #{pd.keywords}),'%') 
+					or
+					"LDDM" LIKE CONCAT(CONCAT('%', #{pd.keywords}),'%')
+					or
+					"WFXW" LIKE CONCAT(CONCAT('%', #{pd.keywords}),'%')  
+					or
+					"SHZT" LIKE CONCAT(CONCAT('%', #{pd.keywords}),'%') 
 				
 				)
 		</if>
