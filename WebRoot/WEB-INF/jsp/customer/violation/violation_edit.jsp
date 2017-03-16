@@ -109,7 +109,7 @@
 							</tr>
 							<tr>
 								<td style="width:75px;text-align: right;padding-top: 13px;">备注20:</td>
-								<td><input class="span10 date-picker" name="WFSJ" id="WFSJ" value="${pd.WFSJ}" type="text" data-date-format="yyyy-mm-dd" readonly="readonly" placeholder="备注20" title="备注20" style="width:98%;"/></td>
+								<td><input type="text" name="WFSJ" id="WFSJ" value="${pd.WFSJ}" maxlength="20" placeholder="这里输入备注20" title="备注20" style="width:98%;"/></td>
 							</tr>
 							<tr>
 								<td style="width:75px;text-align: right;padding-top: 13px;">备注21:</td>
@@ -129,7 +129,7 @@
 							</tr>
 							<tr>
 								<td style="width:75px;text-align: right;padding-top: 13px;">备注25:</td>
-								<td><input class="span10 date-picker" name="WFSJ1" id="WFSJ1" value="${pd.WFSJ1}" type="text" data-date-format="yyyy-mm-dd" readonly="readonly" placeholder="备注25" title="备注25" style="width:98%;"/></td>
+								<td><input type="text" name="WFSJ1" id="WFSJ1" value="${pd.WFSJ1}" maxlength="20" placeholder="这里输入备注25" title="备注25" style="width:98%;"/></td>
 							</tr>
 							<tr>
 								<td style="width:75px;text-align: right;padding-top: 13px;">备注26:</td>
@@ -173,23 +173,27 @@
 							</tr>
 							<tr>
 								<td style="width:75px;text-align: right;padding-top: 13px;">备注36:</td>
-								<td><input type="text" name="ZPSTR1" id="ZPSTR1" value="${pd.ZPSTR1}" maxlength="4000" placeholder="这里输入备注36" title="备注36" style="width:98%;"/></td>
+								<td><input type="text" name="SHZT" id="SHZT" value="${pd.SHZT}" maxlength="5" placeholder="这里输入备注36" title="备注36" style="width:98%;"/></td>
 							</tr>
 							<tr>
 								<td style="width:75px;text-align: right;padding-top: 13px;">备注37:</td>
-								<td><input type="text" name="ZPSTR2" id="ZPSTR2" value="${pd.ZPSTR2}" maxlength="4000" placeholder="这里输入备注37" title="备注37" style="width:98%;"/></td>
+								<td><input type="text" name="WFLX" id="WFLX" value="${pd.WFLX}" maxlength="10" placeholder="这里输入备注37" title="备注37" style="width:98%;"/></td>
 							</tr>
 							<tr>
 								<td style="width:75px;text-align: right;padding-top: 13px;">备注38:</td>
-								<td><input type="text" name="ZPSTR3" id="ZPSTR3" value="${pd.ZPSTR3}" maxlength="4000" placeholder="这里输入备注38" title="备注38" style="width:98%;"/></td>
+								<td><input type="text" name="ZPSTR1" id="ZPSTR1" value="${pd.ZPSTR1}" maxlength="100" placeholder="这里输入备注38" title="备注38" style="width:98%;"/></td>
 							</tr>
 							<tr>
 								<td style="width:75px;text-align: right;padding-top: 13px;">备注39:</td>
-								<td><input type="text" name="SHZT" id="SHZT" value="${pd.SHZT}" maxlength="5" placeholder="这里输入备注39" title="备注39" style="width:98%;"/></td>
+								<td><input type="text" name="ZPSTR2" id="ZPSTR2" value="${pd.ZPSTR2}" maxlength="100" placeholder="这里输入备注39" title="备注39" style="width:98%;"/></td>
 							</tr>
 							<tr>
 								<td style="width:75px;text-align: right;padding-top: 13px;">备注40:</td>
-								<td><input type="text" name="WFLX" id="WFLX" value="${pd.WFLX}" maxlength="10" placeholder="这里输入备注40" title="备注40" style="width:98%;"/></td>
+								<td><input type="text" name="ZPSTR3" id="ZPSTR3" value="${pd.ZPSTR3}" maxlength="100" placeholder="这里输入备注40" title="备注40" style="width:98%;"/></td>
+							</tr>
+							<tr>
+								<td style="width:75px;text-align: right;padding-top: 13px;">备注41:</td>
+								<td><input type="text" name="SHSM" id="SHSM" value="${pd.SHSM}" maxlength="1000" placeholder="这里输入备注41" title="备注41" style="width:98%;"/></td>
 							</tr>
 							<tr>
 								<td style="text-align: center;" colspan="10">
@@ -576,40 +580,10 @@
 				$("#SBBH").focus();
 			return false;
 			}
-			if($("#ZPSTR1").val()==""){
-				$("#ZPSTR1").tips({
-					side:3,
-		            msg:'请输入备注36',
-		            bg:'#AE81FF',
-		            time:2
-		        });
-				$("#ZPSTR1").focus();
-			return false;
-			}
-			if($("#ZPSTR2").val()==""){
-				$("#ZPSTR2").tips({
-					side:3,
-		            msg:'请输入备注37',
-		            bg:'#AE81FF',
-		            time:2
-		        });
-				$("#ZPSTR2").focus();
-			return false;
-			}
-			if($("#ZPSTR3").val()==""){
-				$("#ZPSTR3").tips({
-					side:3,
-		            msg:'请输入备注38',
-		            bg:'#AE81FF',
-		            time:2
-		        });
-				$("#ZPSTR3").focus();
-			return false;
-			}
 			if($("#SHZT").val()==""){
 				$("#SHZT").tips({
 					side:3,
-		            msg:'请输入备注39',
+		            msg:'请输入备注36',
 		            bg:'#AE81FF',
 		            time:2
 		        });
@@ -619,11 +593,51 @@
 			if($("#WFLX").val()==""){
 				$("#WFLX").tips({
 					side:3,
-		            msg:'请输入备注40',
+		            msg:'请输入备注37',
 		            bg:'#AE81FF',
 		            time:2
 		        });
 				$("#WFLX").focus();
+			return false;
+			}
+			if($("#ZPSTR1").val()==""){
+				$("#ZPSTR1").tips({
+					side:3,
+		            msg:'请输入备注38',
+		            bg:'#AE81FF',
+		            time:2
+		        });
+				$("#ZPSTR1").focus();
+			return false;
+			}
+			if($("#ZPSTR2").val()==""){
+				$("#ZPSTR2").tips({
+					side:3,
+		            msg:'请输入备注39',
+		            bg:'#AE81FF',
+		            time:2
+		        });
+				$("#ZPSTR2").focus();
+			return false;
+			}
+			if($("#ZPSTR3").val()==""){
+				$("#ZPSTR3").tips({
+					side:3,
+		            msg:'请输入备注40',
+		            bg:'#AE81FF',
+		            time:2
+		        });
+				$("#ZPSTR3").focus();
+			return false;
+			}
+			if($("#SHSM").val()==""){
+				$("#SHSM").tips({
+					side:3,
+		            msg:'请输入备注41',
+		            bg:'#AE81FF',
+		            time:2
+		        });
+				$("#SHSM").focus();
 			return false;
 			}
 			$("#Form").submit();

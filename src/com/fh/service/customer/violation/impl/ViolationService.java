@@ -9,9 +9,9 @@ import com.fh.util.PageData;
 import com.fh.service.customer.violation.ViolationManager;
 
 /** 
- * 说明： 违法信息业务
+ * 说明： 随手拍
  * 创建人：FH Q
- * 创建时间：2017-03-15
+ * 创建时间：2017-03-16
  * @version
  */
 @Service("violationService")

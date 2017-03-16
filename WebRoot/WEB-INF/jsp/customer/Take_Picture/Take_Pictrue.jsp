@@ -22,7 +22,7 @@
 <link href="static/customer/css/Take_Picture/bootstrapValidator.css" rel="stylesheet">
 
 <script type="text/javascript" src="static/customer/js/Take_Pictrue/jquery-2.0.3.min.js"></script>
-<script type="text/javascript" src="static/customer/js/Take_Pictrue/bootstrap.min.js"></script>
+<!-- <script type="text/javascript" src="static/customer/js/Take_Pictrue/bootstrap.min.js"></script> -->
 <script type="text/javascript" src="static/customer/js/Take_Pictrue/bootstrapValidator.js"></script>
 <script type="text/javascript" src="static/customer/js/Take_Pictrue/admin_common.js"></script>
 <script type="text/javascript" src="static/customer/js/Take_Pictrue/roby.js"></script>
@@ -35,7 +35,7 @@
 </style>
 
 </head>
-<body>
+<body class="no-skin">
 	<div class="main_body">
 		<div class="page_message">
 			<section id="contents">
@@ -543,9 +543,9 @@
     </div>
 </div>
 
-<audio id="audio" loop="loop">
+<!-- <audio id="audio" loop="loop">
     <source src="/xapt/component/jgpt/images/notify.mp3" type="audio/mpeg">
-</audio>
+</audio> -->
 
 <form id="downfrm" action="" method="POST" target="downiframe"></form>
 <iframe id="downiframe" name="downiframe" style="display: none;" height="0" width="0"></iframe>
@@ -750,10 +750,10 @@
             $.post("/xapt/wx/take/refresh",{"refresh":refresh});
         });
 
-        var ringflag = $("#ringflag").val();
+       /*  var ringflag = $("#ringflag").val();
         if (ringflag=='0'){
             audio.play();
-        }
+        } */
 
         $("#statistics").click(function(){
             var status = $("#condition").val();
@@ -1026,14 +1026,5 @@ top: 150px;">
         });
     });
 </script>
-
+</body>
 </html>
-
-
-
-
-
-
-
-
-

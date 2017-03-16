@@ -5,9 +5,9 @@ import com.fh.entity.Page;
 import com.fh.util.PageData;
 
 /** 
- * 说明： 违法信息业务接口
+ * 说明： 随手拍接口
  * 创建人：FH Q
- * 创建时间：2017-03-15
+ * 创建时间：2017-03-16
  * @version
  */
 public interface ViolationManager{
