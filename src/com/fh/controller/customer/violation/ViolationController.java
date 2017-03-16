@@ -9,6 +9,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.http.HttpRequest;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.WebDataBinder;
@@ -122,9 +125,11 @@ public class ViolationController extends BaseController {
 		ModelAndView mv = this.getModelAndView();
 		PageData pd = new PageData();
 		pd = this.getPageData();
+		String num = (String) pd.get("num");
 		pd = violationService.findById(pd);	//根据ID读取
 		mv.setViewName("customer/violation/violation_edit");
 		mv.addObject("msg", "edit");
+		mv.addObject("num",num);
 		mv.addObject("pd", pd);
 		return mv;
 	}	

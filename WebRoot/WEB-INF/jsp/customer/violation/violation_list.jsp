@@ -193,7 +193,7 @@
 											<td class='center'>${var.WFXW}</td>
 											<td class='center'><!-- 车牌号修改 --> 
 												<c:if test="${var.SHZT == 0 }"><!-- 0未审核，1已通过，2未通过 -->
-													<a class="btn btn-xs btn-success" title="修改车牌号" ><!-- onclick="edit('${var.XH}');" -->
+													<a class="btn btn-xs btn-success" title="修改车牌号" ><!-- onclick="edit('${var.XH}',1);" -->
 														<i class="ace-icon fa fa-pencil-square-o bigger-120" title="修改车牌号">修改</i>
 													</a>
 												</c:if>
@@ -201,14 +201,14 @@
 											<td class='center'>${var.FZJG}</td>
 											<td class='center'><!-- 归属地修改 -->
 												<c:if test="${var.SHZT == 0 }"><!-- 0未审核，1已通过，2未通过 -->
-													<a class="btn btn-xs btn-success" title="修改归属地" onclick="edit('${var.XH}',this.title);">
+													<a class="btn btn-xs btn-success" title="修改归属地" onclick="edit('${var.XH}',2);">
 														<i class="ace-icon fa fa-pencil-square-o bigger-120" title="修改归属地">修改</i>
 													</a>
 												</c:if>
 											</td>
 											<td class='center'>是否民警</td>
 											<td class='center'>
-												<a class="btn btn-xs btn-success" title="详情" onclick="edit('${var.XH}',this.title);">
+												<a class="btn btn-xs btn-success" title="详情" onclick="edit('${var.XH}',3);">
 													详情
 												</a>
 											</td>
@@ -219,7 +219,7 @@
 												</c:if>
 												<div class="hidden-sm hidden-xs btn-group">
 													<c:if test="${var.SHZT == 0 }"><!-- 0未审核，1已通过，2未通过 -->
-													<a class="btn btn-xs btn-success" title="受理办理" onclick="edit('${var.XH}',this.title);">
+													<a class="btn btn-xs btn-success" title="受理办理" onclick="edit('${var.XH}',4);">
 														<i class="ace-icon fa fa-pencil-square-o bigger-120" title="受理办理">受理</i>
 														<!-- 受理 -->
 													</a>
@@ -395,26 +395,13 @@
 			 diag.show();
 		}
 		
-		//删除
-		function del(Id){
-			bootbox.confirm("确定要删除吗?", function(result) {
-				if(result) {
-					top.jzts();
-					var url = "<%=basePath%>violation/delete.do?VIOLATION_ID="+Id+"&tm="+new Date().getTime();
-					$.get(url,function(data){
-						nextPage(${page.currentPage});
-					});
-				}
-			});
-		}
-		
 		//修改
 		function edit(Id,title){
 			 top.jzts();
 			 var diag = new top.Dialog();
 			 diag.Drag=true;
 			 diag.Title =title;
-			 diag.URL = '<%=basePath%>violation/goEdit.do?XH='+Id;
+			 diag.URL = '<%=basePath%>violation/goEdit.do?XH='+Id+'&num='+title;
 			 diag.Width = 450;
 			 diag.Height = 355;
 			 diag.Modal = false;			//有无遮罩窗口
