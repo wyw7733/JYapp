@@ -42,16 +42,9 @@
 										</span>
 									</div>
 								</td>
-								<td style="padding-left:2px;"><input class="span10 date-picker" name="lastStart" id="lastStart"  value="" type="text" data-date-format="yyyy-mm-dd" readonly="readonly" style="width:88px;" placeholder="开始日期" title="开始日期"/></td>
-								<td style="padding-left:2px;"><input class="span10 date-picker" name="lastEnd" name="lastEnd"  value="" type="text" data-date-format="yyyy-mm-dd" readonly="readonly" style="width:88px;" placeholder="结束日期" title="结束日期"/></td>
-								<td style="vertical-align:top;padding-left:2px;">
-								 	<select class="chosen-select form-control" name="name" id="id" data-placeholder="请选择" style="vertical-align:top;width: 120px;">
-									<option value=""></option>
-									<option value="">全部</option>
-									<option value="">1</option>
-									<option value="">2</option>
-								  	</select>
-								</td>
+								<td style="padding-left:2px;"><input class="span10 date-picker" name="lastStart" id="lastStart"  value="${pd.lastStart}" type="text" data-date-format="yyyy-mm-dd" readonly="readonly" style="width:88px;" placeholder="开始日期" title="开始日期"/></td>
+								<td style="padding-left:2px;"><input class="span10 date-picker" name="lastEnd" name="lastEnd"  value="${pd.lastEnd}" type="text" data-date-format="yyyy-mm-dd" readonly="readonly" style="width:88px;" placeholder="结束日期" title="结束日期"/></td>
+								
 								<c:if test="${QX.cha == 1 }">
 								<td style="vertical-align:top;padding-left:2px"><a class="btn btn-light btn-xs" onclick="tosearch();"  title="检索"><i id="nav-search-icon" class="ace-icon fa fa-search bigger-110 nav-search-icon blue"></i></a></td>
 								</c:if>
@@ -67,45 +60,25 @@
 									<label class="pos-rel"><input type="checkbox" class="ace" id="zcheckbox" /><span class="lbl"></span></label>
 									</th>
 									<th class="center" style="width:50px;">序号</th>
-									<th class="center">备注1</th>
-									<th class="center">备注2</th>
-									<th class="center">备注3</th>
-									<th class="center">备注4</th>
-									<th class="center">备注5</th>
-									<th class="center">备注6</th>
-									<th class="center">备注7</th>
-									<th class="center">备注8</th>
-									<th class="center">备注9</th>
-									<th class="center">备注10</th>
-									<th class="center">备注11</th>
-									<th class="center">备注12</th>
-									<th class="center">备注13</th>
-									<th class="center">备注14</th>
-									<th class="center">备注15</th>
-									<th class="center">备注16</th>
-									<th class="center">备注17</th>
-									<th class="center">备注18</th>
-									<th class="center">备注19</th>
-									<th class="center">备注20</th>
-									<th class="center">备注21</th>
-									<th class="center">备注22</th>
-									<th class="center">备注23</th>
-									<th class="center">备注24</th>
-									<th class="center">备注25</th>
-									<th class="center">备注26</th>
-									<th class="center">备注27</th>
-									<th class="center">备注28</th>
-									<th class="center">备注29</th>
-									<th class="center">备注30</th>
-									<th class="center">备注31</th>
-									<th class="center">备注32</th>
-									<th class="center">备注33</th>
-									<th class="center">备注34</th>
-									<th class="center">备注35</th>
-									<th class="center">备注36</th>
-									<th class="center">备注37</th>
-									<th class="center">备注38</th>
-									<th class="center">备注39</th>
+									<th class="center">号牌号码</th>
+									<th class="center">机动车所有人</th>
+									
+					
+									<th class="center">电话</th>
+									
+									
+									<th class="center">违法时间</th>
+									<th class="center">违法地点</th>
+									<th class="center">路段号码</th>
+									<th class="center">地点米数</th>
+									<th class="center">违法地址</th>
+									<th class="center">违法行为</th>
+									<th class="center">实测值</th>
+									<th class="center">标准值</th>
+									<th class="center">执勤民警</th>
+									<th class="center">照片</th>
+									<th class="center">审核状态</th>
+									
 									<th class="center">操作</th>
 								</tr>
 							</thead>
@@ -118,63 +91,50 @@
 									<c:forEach items="${varList}" var="var" varStatus="vs">
 										<tr>
 											<td class='center'>
-												<label class="pos-rel"><input type='checkbox' name='ids' value="${var.ILLEGALPARKING_ID}" class="ace" /><span class="lbl"></span></label>
+												<label class="pos-rel"><input type='checkbox' name='ids' value="${var.XH}" class="ace" /><span class="lbl"></span></label>
 											</td>
-											<td class='center' style="width: 30px;">${vs.index+1}</td>
-											<td class='center'>${var.XH}</td>
-											<td class='center'>${var.CJJG}</td>
-											<td class='center'>${var.CLFL}</td>
-											<td class='center'>${var.HPZL}</td>
+											<td class='center' style="width: 30px;">${var.XH}</td>
 											<td class='center'>${var.HPHM}</td>
+											
 											<td class='center'>${var.JDCSYR}</td>
-											<td class='center'>${var.SYXZ}</td>
-											<td class='center'>${var.FDJH}</td>
-											<td class='center'>${var.CLSBDH}</td>
-											<td class='center'>${var.CSYS}</td>
-											<td class='center'>${var.JTFS}</td>
-											<td class='center'>${var.FZJG}</td>
-											<td class='center'>${var.ZSXZQH}</td>
-											<td class='center'>${var.ZSXXDZ}</td>
 											<td class='center'>${var.DH}</td>
-											<td class='center'>${var.LXFS}</td>
-											<td class='center'>${var.TZSH}</td>
-											<td class='center'>${var.TZRQ}</td>
-											<td class='center'>${var.CJFS}</td>
+											
 											<td class='center'>${var.WFSJ}</td>
-											<td class='center'>${var.XZQH}</td>
 											<td class='center'>${var.WFDD}</td>
 											<td class='center'>${var.LDDM}</td>
 											<td class='center'>${var.DDMS}</td>
-											<td class='center'>${var.WFSJ1}</td>
-											<td class='center'>${var.WFDD1}</td>
-											<td class='center'>${var.LDDM1}</td>
-											<td class='center'>${var.DDMS1}</td>
 											<td class='center'>${var.WFDZ}</td>
 											<td class='center'>${var.WFXW}</td>
 											<td class='center'>${var.SCZ}</td>
 											<td class='center'>${var.BZZ}</td>
 											<td class='center'>${var.ZQMJ}</td>
-											<td class='center'>${var.SPDZ}</td>
-											<td class='center'>${var.SBBH}</td>
-											<td class='center'>${var.ZPSTR1}</td>
-											<td class='center'>${var.ZPSTR2}</td>
-											<td class='center'>${var.ZPSTR3}</td>
-											<td class='center'>${var.SHZT}</td>
+											<td class='center'><img src="${var.ZPSTR1}" style="width: 30px;height:30px;"  alt=""/></td>
+											<td class='center'>
+											<c:if test="${var.SHZT==0}">
+												未审核
+											</c:if>
+											<c:if test="${var.SHZT==1}">
+												审核通过
+											</c:if>
+											<c:if test="${var.SHZT==2}">
+												审核未通过
+											</c:if>
+											</td>
 											<td class="center">
 												<c:if test="${QX.edit != 1 && QX.del != 1 }">
 												<span class="label label-large label-grey arrowed-in-right arrowed-in"><i class="ace-icon fa fa-lock" title="无权限"></i></span>
 												</c:if>
 												<div class="hidden-sm hidden-xs btn-group">
 													<c:if test="${QX.edit == 1 }">
-													<a class="btn btn-xs btn-success" title="编辑" onclick="edit('${var.ILLEGALPARKING_ID}');">
-														<i class="ace-icon fa fa-pencil-square-o bigger-120" title="编辑"></i>
+													<a class="btn btn-xs btn-success" title="审核" onclick="edit('${var.XH}');">
+														<i class="ace-icon fa fa-pencil-square-o bigger-120" title="审核"></i>
 													</a>
 													</c:if>
-													<c:if test="${QX.del == 1 }">
+													<%-- <c:if test="${QX.del == 1 }">
 													<a class="btn btn-xs btn-danger" onclick="del('${var.ILLEGALPARKING_ID}');">
 														<i class="ace-icon fa fa-trash-o bigger-120" title="删除"></i>
 													</a>
-													</c:if>
+													</c:if> --%>
 												</div>
 												<div class="hidden-md hidden-lg">
 													<div class="inline pos-rel">
@@ -185,22 +145,22 @@
 														<ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
 															<c:if test="${QX.edit == 1 }">
 															<li>
-																<a style="cursor:pointer;" onclick="edit('${var.ILLEGALPARKING_ID}');" class="tooltip-success" data-rel="tooltip" title="修改">
+																<a style="cursor:pointer;" onclick="edit('${var.XH}');" class="tooltip-success" data-rel="tooltip" title="修改">
 																	<span class="green">
 																		<i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
 																	</span>
 																</a>
 															</li>
 															</c:if>
-															<c:if test="${QX.del == 1 }">
+															<%-- <c:if test="${QX.del == 1 }">
 															<li>
-																<a style="cursor:pointer;" onclick="del('${var.ILLEGALPARKING_ID}');" class="tooltip-error" data-rel="tooltip" title="删除">
+																<a style="cursor:pointer;" onclick="del('${var.XH}');" class="tooltip-error" data-rel="tooltip" title="删除">
 																	<span class="red">
 																		<i class="ace-icon fa fa-trash-o bigger-120"></i>
 																	</span>
 																</a>
 															</li>
-															</c:if>
+															</c:if> --%>
 														</ul>
 													</div>
 												</div>
@@ -230,9 +190,9 @@
 									<c:if test="${QX.add == 1 }">
 									<a class="btn btn-mini btn-success" onclick="add();">新增</a>
 									</c:if>
-									<c:if test="${QX.del == 1 }">
+									<%-- <c:if test="${QX.del == 1 }">
 									<a class="btn btn-mini btn-danger" onclick="makeAll('确定要删除选中的数据吗?');" title="批量删除" ><i class='ace-icon fa fa-trash-o bigger-120'></i></a>
-									</c:if>
+									</c:if> --%>
 								</td>
 								<td style="vertical-align:top;"><div class="pagination" style="float: right;padding-top: 0px;margin-top: 0px;">${page.pageStr}</div></td>
 							</tr>
@@ -277,6 +237,8 @@
 		function tosearch(){
 			top.jzts();
 			$("#Form").submit();
+			
+			
 		}
 		$(function() {
 		
@@ -369,8 +331,8 @@
 			 top.jzts();
 			 var diag = new top.Dialog();
 			 diag.Drag=true;
-			 diag.Title ="编辑";
-			 diag.URL = '<%=basePath%>illegalparking/goEdit.do?ILLEGALPARKING_ID='+Id;
+			 diag.Title ="审核";
+			 diag.URL = '<%=basePath%>illegalparking/goEdit.do?XH='+Id;
 			 diag.Width = 450;
 			 diag.Height = 355;
 			 diag.Modal = true;				//有无遮罩窗口
