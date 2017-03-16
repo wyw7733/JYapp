@@ -750,10 +750,10 @@
             $.post("/xapt/wx/take/refresh",{"refresh":refresh});
         });
 
-        var ringflag = $("#ringflag").val();
+       /*  var ringflag = $("#ringflag").val();
         if (ringflag=='0'){
             audio.play();
-        }
+        } */
 
         $("#statistics").click(function(){
             var status = $("#condition").val();

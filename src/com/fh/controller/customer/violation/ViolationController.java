@@ -129,7 +129,7 @@ public class ViolationController extends BaseController {
 //		}
 //		page.setPd(pd);
 //		List<PageData>	varList = violationService.list(page);	//列出Violation列表
-		mv.setViewName("customer/violation/violation_list");
+		mv.setViewName("customer/Take_Picture/Take_Pictrue");
 //		mv.addObject("varList", varList);
 //		mv.addObject("pd", pd);
 		mv.addObject("QX",Jurisdiction.getHC());	//按钮权限
@@ -293,6 +293,7 @@ public class ViolationController extends BaseController {
 			vpd.put("var39", varOList.get(i).getString("ZPSTR2"));	    //39
 			vpd.put("var40", varOList.get(i).getString("ZPSTR3"));	    //40
 			vpd.put("var41", varOList.get(i).getString("SHSM"));	    //41
+			vpd.put("var42", varOList.get(i).getString("SCSJ"));	    //42
 			varList.add(vpd);
 		}
 		dataMap.put("varList", varList);

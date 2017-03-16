@@ -9,7 +9,8 @@
 	
 	<!-- 字段 -->
 	<sql id="Field">
-		"XH",	
+		"XH",
+		"SCSJ",	
 		"CJJG",	
 		"CLFL",	
 		"HPZL",	
@@ -49,13 +50,14 @@
 		"ZPSTR1",	
 		"ZPSTR2",	
 		"ZPSTR3",	
-		"SHSM",	
+		"SHSM"
 		<!-- "VIOLATION_ID" -->
 	</sql>
 	
 	<!-- 字段值 -->
 	<sql id="FieldValue">
-			#{XH},	
+			#{XH},
+			#{SCSJ},	
 			#{CJJG},	
 			#{CLFL},	
 			#{HPZL},	
@@ -95,7 +97,7 @@
 			#{ZPSTR1},	
 			#{ZPSTR2},	
 			#{ZPSTR3},	
-			#{SHSM},	
+			#{SHSM}	
 			<!-- #{VIOLATION_ID} -->
 	</sql>
 	
@@ -124,7 +126,8 @@
 		update
 		<include refid="tableName"></include>
 			set 
-				"XH" = #{XH},	
+				"XH" = #{XH},
+				"SCSJ" = #{SCSJ},
 				"CJJG" = #{CJJG},	
 				"CLFL" = #{CLFL},	
 				"HPZL" = #{HPZL},	

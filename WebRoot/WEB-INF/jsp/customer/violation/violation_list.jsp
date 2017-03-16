@@ -34,7 +34,7 @@
 						<form action="violation/list.do" method="post" name="Form" id="Form">
 						<table style="margin-top:5px;">
 							<tr>
-								<td>
+								<%-- <td>
 									<div class="nav-search">
 										<span class="input-icon">
 											<input type="text" placeholder="这里输入关键词" class="nav-search-input" id="nav-search-input" autocomplete="off" name="keywords" value="${pd.keywords }" placeholder="这里输入关键词"/>
@@ -43,19 +43,108 @@
 									</div>
 								</td>
 								<td style="padding-left:2px;"><input class="span10 date-picker" name="lastStart" id="lastStart"  value="" type="text" data-date-format="yyyy-mm-dd" readonly="readonly" style="width:88px;" placeholder="开始日期" title="开始日期"/></td>
-								<td style="padding-left:2px;"><input class="span10 date-picker" name="lastEnd" name="lastEnd"  value="" type="text" data-date-format="yyyy-mm-dd" readonly="readonly" style="width:88px;" placeholder="结束日期" title="结束日期"/></td>
+								<td style="padding-left:2px;"><input class="span10 date-picker" name="lastEnd" name="lastEnd"  value="" type="text" data-date-format="yyyy-mm-dd" readonly="readonly" style="width:88px;" placeholder="结束日期" title="结束日期"/></td> --%>
 								<td style="vertical-align:top;padding-left:2px;">
 								 	<select class="chosen-select form-control" name="name" id="id" data-placeholder="请选择" style="vertical-align:top;width: 120px;">
-									<option value=""></option>
-									<option value="">全部</option>
-									<option value="">1</option>
-									<option value="">2</option>
+									<option value="">请选择统计条件</option>
+									<option value="1">未审核</option>
+									<option value="2">已审核</option>
+									<option value="3">作废</option>
 								  	</select>
 								</td>
-								<c:if test="${QX.cha == 1 }">
+								<td style="vertical-align:top;padding-left:2px;">
+								 	<select class="chosen-select form-control" name="name" id="id" data-placeholder="请选择" style="vertical-align:top;width: 120px;">
+									<option value="">全部归属地</option>
+									<option value="1">莲湖区</option>
+									<option value="2">新城区</option>
+									<option value="3">碑林区</option>
+									<option value="4">雁塔区</option>
+									<option value="5">高新区</option>
+									<option value="6">曲江区</option>
+									<option value="7">未央区</option>
+									<option value="8">经开区</option>
+									<option value="9">灞桥区</option>
+									<option value="10">长安区</option>
+									<option value="11">高速大队</option>
+								  	</select>
+								</td>
+								
+								<td style="vertical-align:top;padding-left:2px;">
+								 	<select class="chosen-select form-control" name="name" id="id" data-placeholder="请选择" style="vertical-align:top;width: 120px;">
+									<option value="">请选择标记条件</option>
+									<option value="1">经典案例</option>
+									<option value="2">曝光素材</option>
+									<option value="3">其他</option>
+									<option value="4">疑难杂症</option>
+									<option value="5">高速</option>
+								  	</select>
+								</td>
+								<td style="vertical-align:top;padding-left:2px;">
+								 	<select class="chosen-select form-control" name="name" id="id" data-placeholder="请选择" style="vertical-align:top;width: 120px;">
+									<option value="">请选择是否录入违法</option>
+									<option value="1">否</option>
+									<option value="2">是</option>
+								  	</select>
+								</td>
+								<td style="vertical-align:top;padding-left:2px;">
+								 	<select class="chosen-select form-control" name="name" id="id" data-placeholder="请选择" style="vertical-align:top;width: 140px;">
+									<option value="">请选择违法行为</option>
+									<optgroup label="机动车违法行为">
+										<option value="违法停车">违法停车</option>
+										<option value="主干道蹭停">主干道蹭停</option>
+										<option value="占用高速应急车道">占用高速应急车道</option>
+										<option value="车窗抛物">车窗抛物</option>
+										<option value="占用公交道">占用公交道</option>
+										<option value="斑马线不礼让行人">斑马线不礼让行人</option>
+										<option value="变道加塞">变道加塞</option>
+										<option value="逆向行驶">逆向行驶</option>
+										<option value="行驶中使用手机">行驶中使用手机</option>
+										<option value="闯红灯">闯红灯</option>
+										<option value="穿插行驶">穿插行驶</option>
+										<option value="违反标志标线">违反标志标线</option>
+										<option value="追逐竞驶">追逐竞驶</option>
+										<option value="肇事逃逸">肇事逃逸</option>
+										<option value="故意遮挡号牌">故意遮挡号牌</option>
+										<option value="危险驾驶">危险驾驶</option>
+										<option value="不按规定使用远光灯">不按规定使用远光灯</option>
+									</optgroup>
+									<optgroup label="非机动车违法行为">
+										<option value="非机动车闯红灯">非机动车闯红灯</option>
+										<option value="走机动车道">走机动车道</option>
+									</optgroup>
+									<optgroup label="行人违法行为">
+										<option value="行人闯红灯">行人闯红灯</option>
+										<option value="翻栅栏">翻栅栏</option>
+									</optgroup>
+								  	</select>
+								</td>
+								<td style="vertical-align:top;padding-left:2px;">
+								 	<select class="chosen-select form-control" name="name" id="id" data-placeholder="请选择" style="vertical-align:top;width: 100px;">
+									<option value="">是否民警上传</option>
+									<option value="1">是</option>
+									<option value="2">否</option>
+								  	</select>
+								</td>
+								<td style="padding-left:2px;"><input class="span10 date-picker" name="lastStart" id="lastStart"  value="" type="text" data-date-format="yyyy-mm-dd" readonly="readonly" style="width:88px;" placeholder="开始日期" title="开始日期"/></td>
+								<td style="padding-left:2px;"><input class="span10 date-picker" name="lastEnd" name="lastEnd"  value="" type="text" data-date-format="yyyy-mm-dd" readonly="readonly" style="width:88px;" placeholder="结束日期" title="结束日期"/></td>
+								
+								<%-- <c:if test="${QX.cha == 1 }">
 								<td style="vertical-align:top;padding-left:2px"><a class="btn btn-light btn-xs" onclick="tosearch();"  title="检索"><i id="nav-search-icon" class="ace-icon fa fa-search bigger-110 nav-search-icon blue"></i></a></td>
 								</c:if>
-								<c:if test="${QX.toExcel == 1 }"><td style="vertical-align:top;padding-left:2px;"><a class="btn btn-light btn-xs" onclick="toExcel();" title="导出到EXCEL"><i id="nav-search-icon" class="ace-icon fa fa-download bigger-110 nav-search-icon blue"></i></a></td></c:if>
+								<c:if test="${QX.toExcel == 1 }"><td style="vertical-align:top;padding-left:2px;"><a class="btn btn-light btn-xs" onclick="toExcel();" title="导出到EXCEL"><i id="nav-search-icon" class="ace-icon fa fa-download bigger-110 nav-search-icon blue"></i></a></td></c:if> --%>
+							</tr>
+							<tr >
+								<td colspan="8" style="vertical-align:left;padding-left:2px;"> 
+								 <a id="statistics" style="padding:8px 12px;position:relative;top:2px;" class="btn btn-sm">数据查询</a> 
+                   				 <a href="/xapt/wx/take/list" style="padding:8px 12px;position:relative;top:2px;" class="btn btn-sm">清除查询</a> 
+                    			 <a id="stathbdown" style="padding:8px 12px;position:relative;top:2px;" class="btn btn-sm">红包奖励下载</a> 
+                   				 <a id="statlbdown" style="padding:8px 12px;position:relative;top:2px;" class="btn btn-sm">数据下载</a> 
+                   				 <a id="statCount" style="padding:8px 12px;position:relative;top:2px;" class="btn btn-sm">数据统计</a> 
+                   				 <a id="newReply" style="padding:8px 12px;position:relative;top:2px;" class="btn btn-sm">最新回复</a> 
+                   				 <a id="workStat" style="padding:8px 12px;position:relative;top:2px;" class="btn btn-sm">工作统计</a> 
+                   				 <a id="policeStat" style="padding:8px 12px;position:relative;top:2px;" class="btn btn-sm">警员专区</a> 
+								<span style="padding:8px 12px;position:relative;top:10px;">共13209起</span> 
+								 </td>
 							</tr>
 						</table>
 						<!-- 检索  -->
@@ -67,47 +156,19 @@
 									<label class="pos-rel"><input type="checkbox" class="ace" id="zcheckbox" /><span class="lbl"></span></label>
 									</th>
 									<th class="center" style="width:50px;">序号</th>
-									<th class="center">备注1</th>
-									<th class="center">备注2</th>
-									<th class="center">备注3</th>
-									<th class="center">备注4</th>
-									<th class="center">备注5</th>
-									<th class="center">备注6</th>
-									<th class="center">备注7</th>
-									<th class="center">备注8</th>
-									<th class="center">备注9</th>
-									<th class="center">备注10</th>
-									<th class="center">备注11</th>
-									<th class="center">备注12</th>
-									<th class="center">备注13</th>
-									<th class="center">备注14</th>
-									<th class="center">备注15</th>
-									<th class="center">备注16</th>
-									<th class="center">备注17</th>
-									<th class="center">备注18</th>
-									<th class="center">备注19</th>
-									<th class="center">备注20</th>
-									<th class="center">备注21</th>
-									<th class="center">备注22</th>
-									<th class="center">备注23</th>
-									<th class="center">备注24</th>
-									<th class="center">备注25</th>
-									<th class="center">备注26</th>
-									<th class="center">备注27</th>
-									<th class="center">备注28</th>
-									<th class="center">备注29</th>
-									<th class="center">备注30</th>
-									<th class="center">备注31</th>
-									<th class="center">备注32</th>
-									<th class="center">备注33</th>
-									<th class="center">备注34</th>
-									<th class="center">备注35</th>
-									<th class="center">备注36</th>
-									<th class="center">备注37</th>
-									<th class="center">备注38</th>
-									<th class="center">备注39</th>
-									<th class="center">备注40</th>
-									<th class="center">备注41</th>
+									<th class="center">编号</th>
+									<th class="center">上传时间</th>
+									<th class="center">违法地点</th>
+									<th class="center">违法车牌</th>
+									<th class="center">上报人微信OpenId</th>
+									<th class="center">手机号码</th>
+									<th class="center">违法行为</th>
+									<th class="center">车牌号修改</th>
+									<th class="center">归属地</th>
+									<th class="center">归属地修改</th>
+									<th class="center">是否民警</th>
+									<th class="center">详情</th>
+									<th class="center">处理时间</th>
 									<th class="center">操作</th>
 								</tr>
 							</thead>
@@ -124,61 +185,43 @@
 											</td>
 											<td class='center' style="width: 30px;">${vs.index+1}</td>
 											<td class='center'>${var.XH}</td>
-											<td class='center'>${var.CJJG}</td>
-											<td class='center'>${var.CLFL}</td>
-											<td class='center'>${var.HPZL}</td>
-											<td class='center'>${var.HPHM}</td>
-											<td class='center'>${var.JDCSYR}</td>
-											<td class='center'>${var.SYXZ}</td>
-											<td class='center'>${var.FDJH}</td>
-											<td class='center'>${var.CLSBDH}</td>
-											<td class='center'>${var.CSYS}</td>
-											<td class='center'>${var.JTFS}</td>
-											<td class='center'>${var.FZJG}</td>
-											<td class='center'>${var.ZSXZQH}</td>
-											<td class='center'>${var.ZSXXDZ}</td>
-											<td class='center'>${var.DH}</td>
-											<td class='center'>${var.LXFS}</td>
-											<td class='center'>${var.TZSH}</td>
-											<td class='center'>${var.TZRQ}</td>
-											<td class='center'>${var.CJFS}</td>
-											<td class='center'>${var.WFSJ}</td>
-											<td class='center'>${var.XZQH}</td>
+											<td class='center'>${var.SCSJ}</td>
 											<td class='center'>${var.WFDD}</td>
-											<td class='center'>${var.LDDM}</td>
-											<td class='center'>${var.DDMS}</td>
-											<td class='center'>${var.WFSJ1}</td>
-											<td class='center'>${var.WFDD1}</td>
-											<td class='center'>${var.LDDM1}</td>
-											<td class='center'>${var.DDMS1}</td>
-											<td class='center'>${var.WFDZ}</td>
+											<td class='center'>${var.HPHM}</td>
+											<td class='center'>微信</td>
+											<td class='center'>${var.LXFS}</td>
 											<td class='center'>${var.WFXW}</td>
-											<td class='center'>${var.SCZ}</td>
-											<td class='center'>${var.BZZ}</td>
-											<td class='center'>${var.ZQMJ}</td>
-											<td class='center'>${var.SPDZ}</td>
-											<td class='center'>${var.SBBH}</td>
-											<td class='center'>${var.SHZT}</td>
-											<td class='center'>${var.WFLX}</td>
-											<td class='center'>${var.ZPSTR1}</td>
-											<td class='center'>${var.ZPSTR2}</td>
-											<td class='center'>${var.ZPSTR3}</td>
-											<td class='center'>${var.SHSM}</td>
+											<td class='center'><!-- 车牌号修改 --> 
+												<c:if test="${var.SHZT == 0 }"><!-- 0未审核，1已通过，2未通过 -->
+													<a class="btn btn-xs btn-success" title="修改" ><!-- onclick="edit('${var.XH}');" -->
+														<i class="ace-icon fa fa-pencil-square-o bigger-120" title="修改">修改</i>
+													</a>
+												</c:if>
+											</td>
+											<td class='center'>${var.FZJG}</td>
+											<td class='center'><!-- 归属地修改 -->
+												<c:if test="${var.SHZT == 0 }"><!-- 0未审核，1已通过，2未通过 -->
+													<a class="btn btn-xs btn-success" title="修改" onclick="edit('${var.XH}');">
+														<i class="ace-icon fa fa-pencil-square-o bigger-120" title="修改">修改</i>
+													</a>
+												</c:if>
+											</td>
+											<td class='center'>是否民警</td>
+											<td class='center'>详情</td>
+											<td class='center'>处理时间</td>
 											<td class="center">
 												<c:if test="${QX.edit != 1 && QX.del != 1 }">
 												<span class="label label-large label-grey arrowed-in-right arrowed-in"><i class="ace-icon fa fa-lock" title="无权限"></i></span>
 												</c:if>
 												<div class="hidden-sm hidden-xs btn-group">
-													<c:if test="${QX.edit == 1 }">
-													<a class="btn btn-xs btn-success" title="编辑" onclick="edit('${var.VIOLATION_ID}');">
-														<i class="ace-icon fa fa-pencil-square-o bigger-120" title="编辑"></i>
+													<c:if test="${var.SHZT == 0 }"><!-- 0未审核，1已通过，2未通过 -->
+													<a class="btn btn-xs btn-success" title="受理" onclick="edit('${var.XH}');">
+														<i class="ace-icon fa fa-pencil-square-o bigger-120" title="受理">受理</i>
+														<!-- 受理 -->
 													</a>
 													</c:if>
-													<c:if test="${QX.del == 1 }">
-													<a class="btn btn-xs btn-danger" onclick="del('${var.VIOLATION_ID}');">
-														<i class="ace-icon fa fa-trash-o bigger-120" title="删除"></i>
-													</a>
-													</c:if>
+													<c:if test="${var.SHZT == 1 }">已审核</c:if>
+													<c:if test="${var.SHZT == 2 }">已作废</c:if>
 												</div>
 												<div class="hidden-md hidden-lg">
 													<div class="inline pos-rel">
@@ -230,14 +273,14 @@
 						<div class="page-header position-relative">
 						<table style="width:100%;">
 							<tr>
-								<td style="vertical-align:top;">
+								<%-- <td style="vertical-align:top;">
 									<c:if test="${QX.add == 1 }">
 									<a class="btn btn-mini btn-success" onclick="add();">新增</a>
 									</c:if>
 									<c:if test="${QX.del == 1 }">
 									<a class="btn btn-mini btn-danger" onclick="makeAll('确定要删除选中的数据吗?');" title="批量删除" ><i class='ace-icon fa fa-trash-o bigger-120'></i></a>
 									</c:if>
-								</td>
+								</td> --%>
 								<td style="vertical-align:top;"><div class="pagination" style="float: right;padding-top: 0px;margin-top: 0px;">${page.pageStr}</div></td>
 							</tr>
 						</table>
