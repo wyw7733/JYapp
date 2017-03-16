@@ -117,43 +117,7 @@
 		update
 		<include refid="tableName"></include>
 			set 
-				"CJJG" = #{CJJG},	
-				"CLFL" = #{CLFL},	
-				"HPZL" = #{HPZL},	
-				"HPHM" = #{HPHM},	
-				"JDCSYR" = #{JDCSYR},	
-				"SYXZ" = #{SYXZ},	
-				"FDJH" = #{FDJH},	
-				"CLSBDH" = #{CLSBDH},	
-				"CSYS" = #{CSYS},	
-				"JTFS" = #{JTFS},	
-				"FZJG" = #{FZJG},	
-				"ZSXZQH" = #{ZSXZQH},	
-				"ZSXXDZ" = #{ZSXXDZ},	
-				"DH" = #{DH},	
-				"LXFS" = #{LXFS},	
-				"TZSH" = #{TZSH},	
-				"TZRQ" = #{TZRQ},	
-				"CJFS" = #{CJFS},	
-				"WFSJ" = #{WFSJ},	
-				"XZQH" = #{XZQH},	
-				"WFDD" = #{WFDD},	
-				"LDDM" = #{LDDM},	
-				"DDMS" = #{DDMS},	
-				"WFSJ1" = #{WFSJ1},	
-				"WFDD1" = #{WFDD1},	
-				"LDDM1" = #{LDDM1},	
-				"DDMS1" = #{DDMS1},	
-				"WFDZ" = #{WFDZ},	
-				"WFXW" = #{WFXW},	
-				"SCZ" = #{SCZ},	
-				"BZZ" = #{BZZ},	
-				"ZQMJ" = #{ZQMJ},	
-				"SPDZ" = #{SPDZ},	
-				"SBBH" = #{SBBH},	
-				"ZPSTR1" = #{ZPSTR1},	
-				"ZPSTR2" = #{ZPSTR2},	
-				"ZPSTR3" = #{ZPSTR3},	
+				
 				"SHZT" = #{SHZT}
 			where 
 				"XH" = #{XH}
@@ -179,12 +143,30 @@
 		<if test="pd.keywords!= null and pd.keywords != ''"><!-- 关键词检索 -->
 			and
 				(
-				<!--	根据需求自己加检索条件
-					字段1 LIKE CONCAT(CONCAT('%', #{pd.keywords}),'%')
+				
+					"HPHM" LIKE CONCAT(CONCAT('%', #{pd.keywords}),'%')
 					 or 
-					字段2 LIKE CONCAT(CONCAT('%', #{pd.keywords}),'%') 
-				-->
+					"JDCSYR" LIKE CONCAT(CONCAT('%', #{pd.keywords}),'%') 
+					or
+					"WFDZ" LIKE CONCAT(CONCAT('%', #{pd.keywords}),'%') 
+					or
+					"ZQMJ" LIKE CONCAT(CONCAT('%', #{pd.keywords}),'%') 
+					or
+					"WFDD" LIKE CONCAT(CONCAT('%', #{pd.keywords}),'%') 
+					or
+					"LDDM" LIKE CONCAT(CONCAT('%', #{pd.keywords}),'%')
+					or
+					"WFXW" LIKE CONCAT(CONCAT('%', #{pd.keywords}),'%')  
+					or
+					"SHZT" LIKE CONCAT(CONCAT('%', #{pd.keywords}),'%') 
+				
 				)
+		</if>
+		<if test="pd.lastStart!=null and pd.lastStart!=''"><!-- 到期时间检索 -->
+			and "WFSJ" &gt;= #{pd.lastStart} 
+		</if>
+		<if test="pd.lastEnd!=null and pd.lastEnd!=''"><!-- 到期时间检索 -->
+			and "WFSJ" &lt;= #{pd.lastEnd} 
 		</if>
 	</select>
 	
