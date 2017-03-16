@@ -193,21 +193,25 @@
 											<td class='center'>${var.WFXW}</td>
 											<td class='center'><!-- 车牌号修改 --> 
 												<c:if test="${var.SHZT == 0 }"><!-- 0未审核，1已通过，2未通过 -->
-													<a class="btn btn-xs btn-success" title="修改" ><!-- onclick="edit('${var.XH}');" -->
-														<i class="ace-icon fa fa-pencil-square-o bigger-120" title="修改">修改</i>
+													<a class="btn btn-xs btn-success" title="修改车牌号" ><!-- onclick="edit('${var.XH}');" -->
+														<i class="ace-icon fa fa-pencil-square-o bigger-120" title="修改车牌号">修改</i>
 													</a>
 												</c:if>
 											</td>
 											<td class='center'>${var.FZJG}</td>
 											<td class='center'><!-- 归属地修改 -->
 												<c:if test="${var.SHZT == 0 }"><!-- 0未审核，1已通过，2未通过 -->
-													<a class="btn btn-xs btn-success" title="修改" onclick="edit('${var.XH}');">
-														<i class="ace-icon fa fa-pencil-square-o bigger-120" title="修改">修改</i>
+													<a class="btn btn-xs btn-success" title="修改归属地" onclick="edit('${var.XH}',this.title);">
+														<i class="ace-icon fa fa-pencil-square-o bigger-120" title="修改归属地">修改</i>
 													</a>
 												</c:if>
 											</td>
 											<td class='center'>是否民警</td>
-											<td class='center'>详情</td>
+											<td class='center'>
+												<a class="btn btn-xs btn-success" title="详情" onclick="edit('${var.XH}',this.title);">
+													详情
+												</a>
+											</td>
 											<td class='center'>处理时间</td>
 											<td class="center">
 												<c:if test="${QX.edit != 1 && QX.del != 1 }">
@@ -215,8 +219,8 @@
 												</c:if>
 												<div class="hidden-sm hidden-xs btn-group">
 													<c:if test="${var.SHZT == 0 }"><!-- 0未审核，1已通过，2未通过 -->
-													<a class="btn btn-xs btn-success" title="受理" onclick="edit('${var.XH}');">
-														<i class="ace-icon fa fa-pencil-square-o bigger-120" title="受理">受理</i>
+													<a class="btn btn-xs btn-success" title="受理办理" onclick="edit('${var.XH}',this.title);">
+														<i class="ace-icon fa fa-pencil-square-o bigger-120" title="受理办理">受理</i>
 														<!-- 受理 -->
 													</a>
 													</c:if>
@@ -273,14 +277,6 @@
 						<div class="page-header position-relative">
 						<table style="width:100%;">
 							<tr>
-								<%-- <td style="vertical-align:top;">
-									<c:if test="${QX.add == 1 }">
-									<a class="btn btn-mini btn-success" onclick="add();">新增</a>
-									</c:if>
-									<c:if test="${QX.del == 1 }">
-									<a class="btn btn-mini btn-danger" onclick="makeAll('确定要删除选中的数据吗?');" title="批量删除" ><i class='ace-icon fa fa-trash-o bigger-120'></i></a>
-									</c:if>
-								</td> --%>
 								<td style="vertical-align:top;"><div class="pagination" style="float: right;padding-top: 0px;margin-top: 0px;">${page.pageStr}</div></td>
 							</tr>
 						</table>
@@ -303,6 +299,7 @@
 		</a>
 
 	</div>
+	</body>
 	<!-- /.main-container -->
 
 	<!-- basic scripts -->
@@ -412,15 +409,15 @@
 		}
 		
 		//修改
-		function edit(Id){
+		function edit(Id,title){
 			 top.jzts();
 			 var diag = new top.Dialog();
 			 diag.Drag=true;
-			 diag.Title ="编辑";
-			 diag.URL = '<%=basePath%>violation/goEdit.do?VIOLATION_ID='+Id;
+			 diag.Title =title;
+			 diag.URL = '<%=basePath%>violation/goEdit.do?XH='+Id;
 			 diag.Width = 450;
 			 diag.Height = 355;
-			 diag.Modal = true;				//有无遮罩窗口
+			 diag.Modal = false;			//有无遮罩窗口
 			 diag. ShowMaxButton = true;	//最大化按钮
 		     diag.ShowMinButton = true;		//最小化按钮 
 			 diag.CancelEvent = function(){ //关闭事件
@@ -432,56 +429,5 @@
 			 diag.show();
 		}
 		
-		//批量操作
-		function makeAll(msg){
-			bootbox.confirm(msg, function(result) {
-				if(result) {
-					var str = '';
-					for(var i=0;i < document.getElementsByName('ids').length;i++){
-					  if(document.getElementsByName('ids')[i].checked){
-					  	if(str=='') str += document.getElementsByName('ids')[i].value;
-					  	else str += ',' + document.getElementsByName('ids')[i].value;
-					  }
-					}
-					if(str==''){
-						bootbox.dialog({
-							message: "<span class='bigger-110'>您没有选择任何内容!</span>",
-							buttons: 			
-							{ "button":{ "label":"确定", "className":"btn-sm btn-success"}}
-						});
-						$("#zcheckbox").tips({
-							side:1,
-				            msg:'点这里全选',
-				            bg:'#AE81FF',
-				            time:8
-				        });
-						return;
-					}else{
-						if(msg == '确定要删除选中的数据吗?'){
-							top.jzts();
-							$.ajax({
-								type: "POST",
-								url: '<%=basePath%>violation/deleteAll.do?tm='+new Date().getTime(),
-						    	data: {DATA_IDS:str},
-								dataType:'json',
-								//beforeSend: validateData,
-								cache: false,
-								success: function(data){
-									 $.each(data.list, function(i, list){
-											nextPage(${page.currentPage});
-									 });
-								}
-							});
-						}
-					}
-				}
-			});
-		};
-		
-		//导出excel
-		function toExcel(){
-			window.location.href='<%=basePath%>violation/excel.do';
-		}
 	</script>
-</body>
 </html>
