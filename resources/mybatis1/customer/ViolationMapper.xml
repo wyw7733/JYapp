@@ -44,12 +44,13 @@
 		"ZQMJ",	
 		"SPDZ",	
 		"SBBH",	
+		"SHZT",	
+		"WFLX",	
 		"ZPSTR1",	
 		"ZPSTR2",	
 		"ZPSTR3",	
-		"SHZT",	
-		"WFLX",	
-		"VIOLATION_ID"
+		"SHSM",	
+		<!-- "VIOLATION_ID" -->
 	</sql>
 	
 	<!-- 字段值 -->
@@ -89,12 +90,13 @@
 			#{ZQMJ},	
 			#{SPDZ},	
 			#{SBBH},	
+			#{SHZT},	
+			#{WFLX},	
 			#{ZPSTR1},	
 			#{ZPSTR2},	
 			#{ZPSTR3},	
-			#{SHZT},	
-			#{WFLX},	
-			#{VIOLATION_ID}
+			#{SHSM},	
+			<!-- #{VIOLATION_ID} -->
 	</sql>
 	
 	<!-- 新增-->
@@ -113,7 +115,8 @@
 		delete from
 		<include refid="tableName"></include>
 		where 
-			"VIOLATION_ID" = #{VIOLATION_ID}
+			<!-- "VIOLATION_ID" = #{VIOLATION_ID} -->
+			"XH" = #{XH}
 	</delete>
 	
 	<!-- 修改 -->
@@ -156,14 +159,16 @@
 				"ZQMJ" = #{ZQMJ},	
 				"SPDZ" = #{SPDZ},	
 				"SBBH" = #{SBBH},	
+				"SHZT" = #{SHZT},	
+				"WFLX" = #{WFLX},	
 				"ZPSTR1" = #{ZPSTR1},	
 				"ZPSTR2" = #{ZPSTR2},	
 				"ZPSTR3" = #{ZPSTR3},	
-				"SHZT" = #{SHZT},	
-				"WFLX" = #{WFLX},	
-			"VIOLATION_ID" = "VIOLATION_ID"
+				"SHSM" = #{SHSM}	
+			<!-- "VIOLATION_ID" = "VIOLATION_ID" -->
 			where 
-				"VIOLATION_ID" = #{VIOLATION_ID}
+				<!-- "VIOLATION_ID" = #{VIOLATION_ID} -->
+				"XH" = #{XH}
 	</update>
 	
 	<!-- 通过ID获取数据 -->
@@ -173,7 +178,8 @@
 		from 
 		<include refid="tableName"></include>
 		where 
-			"VIOLATION_ID" = #{VIOLATION_ID}
+			<!-- "VIOLATION_ID" = #{VIOLATION_ID} -->
+			"XH" = #{XH}
 	</select>
 	
 	<!-- 列表 -->
@@ -208,7 +214,7 @@
 		delete from
 		<include refid="tableName"></include>
 		where 
-			"VIOLATION_ID" in
+			"XH" in
 		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
                  #{item}
 		</foreach>

@@ -107,6 +107,7 @@
 									<th class="center">备注38</th>
 									<th class="center">备注39</th>
 									<th class="center">备注40</th>
+									<th class="center">备注41</th>
 									<th class="center">操作</th>
 								</tr>
 							</thead>
@@ -157,11 +158,12 @@
 											<td class='center'>${var.ZQMJ}</td>
 											<td class='center'>${var.SPDZ}</td>
 											<td class='center'>${var.SBBH}</td>
+											<td class='center'>${var.SHZT}</td>
+											<td class='center'>${var.WFLX}</td>
 											<td class='center'>${var.ZPSTR1}</td>
 											<td class='center'>${var.ZPSTR2}</td>
 											<td class='center'>${var.ZPSTR3}</td>
-											<td class='center'>${var.SHZT}</td>
-											<td class='center'>${var.WFLX}</td>
+											<td class='center'>${var.SHSM}</td>
 											<td class="center">
 												<c:if test="${QX.edit != 1 && QX.del != 1 }">
 												<span class="label label-large label-grey arrowed-in-right arrowed-in"><i class="ace-icon fa fa-lock" title="无权限"></i></span>
@@ -438,7 +440,5 @@
 			window.location.href='<%=basePath%>violation/excel.do';
 		}
 	</script>
-
-
 </body>
 </html>

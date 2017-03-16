@@ -26,9 +26,9 @@ import com.fh.util.Tools;
 import com.fh.service.customer.violation.ViolationManager;
 
 /** 
- * 说明：违法信息业务
+ * 说明：随手拍
  * 创建人：FH Q
- * 创建时间：2017-03-15
+ * 创建时间：2017-03-16
  */
 @Controller
 @RequestMapping(value="/violation")
@@ -108,6 +108,30 @@ public class ViolationController extends BaseController {
 		mv.setViewName("customer/violation/violation_list");
 		mv.addObject("varList", varList);
 		mv.addObject("pd", pd);
+		mv.addObject("QX",Jurisdiction.getHC());	//按钮权限
+		return mv;
+	}
+	
+	/**列表2
+	 * @param page
+	 * @throws Exception
+	 */
+	@RequestMapping(value="/list2")
+	public ModelAndView list2(Page page) throws Exception{
+		logBefore(logger, Jurisdiction.getUsername()+"列表Violation");
+		//if(!Jurisdiction.buttonJurisdiction(menuUrl, "cha")){return null;} //校验权限(无权查看时页面会有提示,如果不注释掉这句代码就无法进入列表页面,所以根据情况是否加入本句代码)
+		ModelAndView mv = this.getModelAndView();
+//		PageData pd = new PageData();
+//		pd = this.getPageData();
+//		String keywords = pd.getString("keywords");				//关键词检索条件
+//		if(null != keywords && !"".equals(keywords)){
+//			pd.put("keywords", keywords.trim());
+//		}
+//		page.setPd(pd);
+//		List<PageData>	varList = violationService.list(page);	//列出Violation列表
+		mv.setViewName("customer/violation/violation_list");
+//		mv.addObject("varList", varList);
+//		mv.addObject("pd", pd);
 		mv.addObject("QX",Jurisdiction.getHC());	//按钮权限
 		return mv;
 	}
@@ -222,6 +246,7 @@ public class ViolationController extends BaseController {
 		titles.add("备注38");	//38
 		titles.add("备注39");	//39
 		titles.add("备注40");	//40
+		titles.add("备注41");	//41
 		dataMap.put("titles", titles);
 		List<PageData> varOList = violationService.listAll(pd);
 		List<PageData> varList = new ArrayList<PageData>();
@@ -262,11 +287,12 @@ public class ViolationController extends BaseController {
 			vpd.put("var33", varOList.get(i).getString("ZQMJ"));	    //33
 			vpd.put("var34", varOList.get(i).getString("SPDZ"));	    //34
 			vpd.put("var35", varOList.get(i).getString("SBBH"));	    //35
-			vpd.put("var36", varOList.get(i).getString("ZPSTR1"));	    //36
-			vpd.put("var37", varOList.get(i).getString("ZPSTR2"));	    //37
-			vpd.put("var38", varOList.get(i).getString("ZPSTR3"));	    //38
-			vpd.put("var39", varOList.get(i).getString("SHZT"));	    //39
-			vpd.put("var40", varOList.get(i).getString("WFLX"));	    //40
+			vpd.put("var36", varOList.get(i).getString("SHZT"));	    //36
+			vpd.put("var37", varOList.get(i).getString("WFLX"));	    //37
+			vpd.put("var38", varOList.get(i).getString("ZPSTR1"));	    //38
+			vpd.put("var39", varOList.get(i).getString("ZPSTR2"));	    //39
+			vpd.put("var40", varOList.get(i).getString("ZPSTR3"));	    //40
+			vpd.put("var41", varOList.get(i).getString("SHSM"));	    //41
 			varList.add(vpd);
 		}
 		dataMap.put("varList", varList);
