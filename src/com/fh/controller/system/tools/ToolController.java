@@ -307,5 +307,19 @@ public class ToolController extends BaseController {
 		mv.addObject("pd", pd);
 		return mv;
 	}
+	
+	/**地图页面
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping(value="/gdMap")
+	public ModelAndView gdMap() throws Exception{
+		ModelAndView mv = this.getModelAndView();
+		PageData pd = new PageData();
+		pd = this.getPageData();
+		mv.setViewName("system/tools/gdMap");
+		mv.addObject("pd", pd);
+		return mv;
+	}
 }
 // 创建人：FH 
